@@ -1,12 +1,13 @@
+<div class="event-list-container">
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Accueil</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <p>Page Avec Tous Les Events </p>
-  </body>
-</html>
+<% @events.each do |event| %>
 
+<div class="event-card">
+  <p> <%= event.title %> </p>
+  <p> Commence le: <%= event.start_date %> </p>
+  <%= link_to "Voir l'évenement", event_path(event.id)%>
+</div>
+
+<% end %>
+
+</div>

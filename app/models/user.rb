@@ -7,6 +7,10 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
+
+  def name
+    return self.first_name + " " + self.last_name
+  end
   has_many :attendances
   has_many :events, through: :attendances
   has_many :administrated_event, foreign_key: "administrated_event_id", class_name: "Event"

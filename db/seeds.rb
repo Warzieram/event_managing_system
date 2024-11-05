@@ -7,17 +7,24 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
 Attendance.destroy_all
 Event.destroy_all
 User.destroy_all
 
 
 
-# User.create(email: "koikapettimei-8001@yopmail.com", encrypted_password: "tchiiiim", description: "fkkjsdflesufhsefuh", first_name: "Jacques", last_name: "Dupuis")
-# User.create(email: "participant@yopmail.com", encrypted_password: "tchiiiim", description: "fkkjsdflesufhsefuh", first_name: "Paul", last_name: "Dupuis")
-# 
-# first_user = User.first
-# Event.create(start_date: "09/12/2024", duration: 50, title: "Concert de Patrick Sebastien", price: 150, location: "Paris", administrated_event_id: first_user.id, description: "lfnqsejfhnsefjnwskdjfwbs")
-# 
-# first_event = Event.first
-# Attendance.create(stripe_customer_id: 0, user_id: first_user.id+1, event_id: first_event.id)
+10.times do |index|
+User.create(id: index+1, email: Faker::Internet.email, password:"fdkngsdlkfgjs", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+end
+
+10.times do |index|
+  Event.create(id: index+1,duration: 5 , start_date: Faker::Date.forward(days: 1), title: Faker::Book.title, description: "fjqsnflqkesjfnsefnq", price: 50, location: Faker::Address.city, administrated_event_id: rand(1..10))
+end
+
+10.times do |index|
+  Attendance.create(id: index+1, stripe_customer_id: rand(1..10), user_id: rand(1..10), event_id: rand(1..10))
+end
+
+
