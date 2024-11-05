@@ -1,10 +1,12 @@
-<div class="event-list-container">
+<div class="centered-container">
+
+  <h1 class="pixel">Eventbite</h1>
 
 <% @events.each do |event| %>
 
 <div class="event-card">
   <p> <%= event.title %> </p>
-  <p> Commence le: <%= event.start_date %> </p>
+  <p> Commence le: <%= event.start_date.strftime("%d/%m/%Y") %> </p>
   <%= link_to "Voir l'évenement", event_path(event.id)%>
 </div>
 

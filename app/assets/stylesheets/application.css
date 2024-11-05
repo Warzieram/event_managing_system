@@ -14,21 +14,54 @@
  *= require_self
  */
 
- ul {
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+ .pixel {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 150px;
+}
+
+
+body{
+  background-color: rgb(36, 36, 36);
+  font-size: 25px;
+}
+
+h1{
+  color: blue;
+}
+
+ li {
     list-style-type: none;
  }
 
- .event-list-container{
+ .centered-container{
    display: flex;
    flex-direction: column;
    align-items: center;
+   margin-top: 50px;
  }
 
  .event-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
    background-color: grey;
    border-radius: 10px;
    padding-bottom: 10px;
    padding-left: 10px;
    padding-right: 10px;
    margin-bottom: 10px;
+ }
+
+ a{
+  color: rgb(0, 0, 0);
+ }
+
+ a:hover{
+  color: #000;
+  text-decoration: underline;
  }

@@ -1,4 +1,6 @@
-
+<div class="centered-container">
+  <h1 class="pixel">Créer un nouveau gossip</h1>
+  <div class="event-card">
 <%= form_tag events_path(action: 'create'),  method: "post" do %>
 <div>
   <%= label_tag :titre %>
@@ -33,3 +35,5 @@
 
   <%= submit_tag 'Valider' %>
 <%end%>
+</div>
+</div>
