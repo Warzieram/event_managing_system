@@ -11,12 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_11_05_093416) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attendances", force: :cascade do |t|
     t.string "stripe_customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
     t.index ["event_id"], name: "index_attendances_on_event_id"
     t.index ["user_id"], name: "index_attendances_on_user_id"
   end
@@ -30,7 +33,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_093416) do
     t.string "location", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "administrated_event_id"
+    t.bigint "administrated_event_id"
     t.index ["administrated_event_id"], name: "index_events_on_administrated_event_id"
   end
 
