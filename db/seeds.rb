@@ -12,8 +12,12 @@ Event.destroy_all
 User.destroy_all
 
 
+
 User.create(email: "koikapettimei-8001@yopmail.com", encrypted_password: "tchiiiim", description: "fkkjsdflesufhsefuh", first_name: "Jacques", last_name: "Dupuis")
 User.create(email: "participant@yopmail.com", encrypted_password: "tchiiiim", description: "fkkjsdflesufhsefuh", first_name: "Paul", last_name: "Dupuis")
-Event.create(start_date: "09/12/2024", duration: 50, title: "Concert de Patrick Sebastien", price: 150, location: "Paris", administrated_event_id: @User.first.id)
 
-Attendance.create(stripe_customer_id: 0, user_id: User.first.id+1, event_id: Event.first.id)
+first_user = User.first
+Event.create(start_date: "09/12/2024", duration: 50, title: "Concert de Patrick Sebastien", price: 150, location: "Paris", administrated_event_id: first_user.id, description: "lfnqsejfhnsefjnwskdjfwbs")
+
+first_event = Event.first
+Attendance.create(stripe_customer_id: 0, user_id: first_user.id+1, event_id: first_event.id)

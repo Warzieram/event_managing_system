@@ -8,7 +8,7 @@ class AttendanceMailer < ApplicationMailer
 
     @admin = User.find @event.administrated_event_id
 
-    @participant = User.find @event.user_id
+    @participant = User.find @attendance.user_id
 
     mail(to: @admin.email, subject: "Nouveau participant !")
   end
