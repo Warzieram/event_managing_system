@@ -65,3 +65,9 @@ h1{
   color: #000;
   text-decoration: underline;
  }
+
+ .form-field{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
