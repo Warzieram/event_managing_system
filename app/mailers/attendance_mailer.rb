@@ -1,5 +1,5 @@
 class AttendanceMailer < ApplicationMailer
-  default :from "no-reply@lucramassamy.fr"
+  default from: "no-reply@lucramassamy.fr"
 
   def creation_email(attendance)
     @attendance = attendance
