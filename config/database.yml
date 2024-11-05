@@ -30,3 +30,6 @@ test:
 production:
   <<: *default
   database: my_database_production
+  username: ud96oabjgt6ddg
+  password: p1de17d2468ecea5f7c8f53e444e8c6f0d3c17f319de10af3c47faf40e8491a28
+  url: postgres://ud96oabjgt6ddg:p1de17d2468ecea5f7c8f53e444e8c6f0d3c17f319de10af3c47faf40e8491a28@c5hilnj7pn10vb.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d61fubkaqeu583
