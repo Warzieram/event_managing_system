@@ -7,8 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+Attendance.destroy_all
+Event.destroy_all
 User.destroy_all
+
 
 User.create(email: "koikapettimei-8001@yopmail.com", encrypted_password: "tchiiiim", description: "fkkjsdflesufhsefuh", first_name: "Jacques", last_name: "Dupuis")
 User.create(email: "participant@yopmail.com", encrypted_password: "tchiiiim", description: "fkkjsdflesufhsefuh", first_name: "Paul", last_name: "Dupuis")
