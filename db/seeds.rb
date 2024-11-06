@@ -15,16 +15,16 @@ User.destroy_all
 
 
 
-10.times do |index|
-User.create(id: index+1, email: Faker::Internet.email, password:"fdkngsdlkfgjs", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-end
-
-10.times do |index|
-  Event.create(id: index+1,duration: 5 , start_date: Faker::Date.forward(days: 1), title: Faker::Book.title, description: "fjqsnflqkesjfnsefnq", price: 50, location: Faker::Address.city, administrated_event_id: rand(1..10))
-end
-
-10.times do |index|
-  Attendance.create(id: index+1, stripe_customer_id: rand(1..10), user_id: rand(1..10), event_id: rand(1..10))
-end
+# 10.times do |index|
+# User.create(id: index+1, email: Faker::Internet.email, password:"fdkngsdlkfgjs", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+# end
+# 
+# 10.times do |index|
+#   Event.create(id: index+1,duration: 5 , start_date: Faker::Date.forward(days: 1), title: Faker::Book.title, description: "fjqsnflqkesjfnsefnq", price: 50, location: Faker::Address.city, administrated_event_id: rand(1..10))
+# end
+# 
+# 10.times do |index|
+#   Attendance.create(id: index+1, stripe_customer_id: rand(1..10), user_id: rand(1..10), event_id: rand(1..10))
+# end
 
 
