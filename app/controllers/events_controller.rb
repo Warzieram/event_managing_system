@@ -20,7 +20,7 @@ class EventsController < ApplicationController
       :location,
       :price
     ))
-
+    @event.image.attach(params[:image])
     @event.id = Event.all.length+1
     @event.administrated_event_id = current_user.id
     if @event.save
@@ -34,6 +34,4 @@ class EventsController < ApplicationController
     @event = Event.find params[:id]
     @admin = User.find @event.administrated_event_id
   end
-
-
 end

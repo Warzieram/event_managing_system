@@ -13,6 +13,20 @@
 <p> Dure  <%= @event.duration %> </p>
 
 <p> Prix  <%= @event.price %> €</p>
+
+<%if @event.image.attached?%>
+  <%= image_tag @event.image, alt: 'avatar' %>
+<%else%>
+  <p>=== Il n'y a pas d'image liée à cet évenement ===</p>
+<%end%>
 </div>
+
+<%if current_user && current_user.id == @admin.id%>
+<h3>Changer l'image ?</h3>
+<%= form_tag event_image_index_path(@event), multipart: true do %>
+  <%= file_field_tag :image %>
+  <%= submit_tag "Mettre à jour" %>
+<% end %>
+<%end%>
 
 </div>
